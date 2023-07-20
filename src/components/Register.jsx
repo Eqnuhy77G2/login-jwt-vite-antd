@@ -8,8 +8,11 @@ function Register() {
   const initialState = {
     userInfo: {
       name: "",
-      user: "",
-      password: "",
+      sex:"",
+      phone:"",
+      visitor_id:"",
+      event : "",
+      // password: "",
     },
     errorMsg: "",
     successMsg: "",
@@ -57,7 +60,7 @@ function Register() {
 
   return (
     <Card
-    title="Cadastro de Usuário"
+    title="User registration"
     bordered={false}
     style={{
       width: 350,
@@ -66,45 +69,71 @@ function Register() {
       
          
           <Form onFinish={submitForm} layout="vertical">
-            <Form.Item label="Nome">
+            <Form.Item label="Visiter_name">
               <Input
-                name="name"
+                name="Visiter_name"
                 required
                 value={state.userInfo.name}
                 onChange={onChangeValue}
-                placeholder="Digite seu nome completo"
+                placeholder="Enter your full name"
               />
             </Form.Item>
-            <Form.Item label="Usuário">
+            <Form.Item label="Sex">
               <Input
-                name="user"
+                name="Sex"
                 required
-                type="user"
-                value={state.userInfo.email}
+                value={state.userInfo.sex}
                 onChange={onChangeValue}
-                placeholder="Digite seu usuário"
+                placeholder="Enter your sex"
               />
             </Form.Item>
-            <Form.Item label="Senha">
+            <Form.Item label="Phone_number">
+              <Input
+                name="phone"
+                required
+                value={state.userInfo.phone}
+                onChange={onChangeValue}
+                placeholder="Enter your phone number"
+              />
+            </Form.Item>
+            <Form.Item label="Visitor_id">
+              <Input
+                name="visitor_id"
+                required
+                value={state.userInfo.visitor_id}
+                onChange={onChangeValue}
+                placeholder="Enter your visitor_id"
+              />
+            </Form.Item>
+            <Form.Item label="Event">
+              <Input
+                name="event"
+                required
+                value={state.userInfo.event}
+                onChange={onChangeValue}
+                placeholder="Enter your event"
+              />
+            </Form.Item>
+            {/* <Form.Item label="Password">
               <Input.Password
                 name="password"
                 required
                 type="password"
                 value={state.userInfo.password}
                 onChange={onChangeValue}
-                placeholder="Digite sua senha"
+                placeholder="Type your password"
               />
-            </Form.Item>
+            </Form.Item> */}
             {errorMsg}
             {successMsg}
             <div>
               <Button type="primary" htmlType="submit">
-                Cadastrar
+                Register
               </Button>
             </div>
           </Form>
           <div>
-            <Button variant="outlined" onClick={toggleNav}>Entrar</Button>
+            <Button variant="outlined" onClick={toggleNav}>Login</Button>
           </div>
     
     </Card>
