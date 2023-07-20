@@ -11,6 +11,7 @@ import Vendas from "./pages/Vendas";
 //Components
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import Home_first from "./pages/Home_first";
 
 // Layout components
 const { Content } = Layout;
@@ -46,6 +47,7 @@ const App = () => {
           
             <Routes>
               <Route path={`${import.meta.env.VITE_REACT_APP_PATH}`} element={<Home />} />
+              <Route path="/hello" element={<Home_first />} />
               <Route
                 path={`${import.meta.env.VITE_REACT_APP_PATH}vendas`}
                 element={
